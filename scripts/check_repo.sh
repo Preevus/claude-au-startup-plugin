@@ -461,7 +461,13 @@ if [ -n "${CHECK_REPO_PRIVATE_TERMS:-}" ]; then
   printf '%s\n' "$CHECK_REPO_PRIVATE_TERMS" | tr -d '\r' | grep -v -E '^[[:space:]]*$' >> "$PRIVATE"
 fi
 if [ "$IN_GIT" -eq 1 ]; then
-  for v in "$(git config user.name 2>/dev/null)" "$(git config user.email 2>/dev/null)"; do
+  GIT_NAME=$(git config user.name 2>/dev/null)
+  GIT_EMAIL=$(git config user.email 2>/dev/null)
+  # The name paired with a GitHub noreply address is the public GitHub handle.
+  case "$GIT_EMAIL" in
+    *@users.noreply.github.com) GIT_NAME='' ;;
+  esac
+  for v in "$GIT_NAME" "$GIT_EMAIL"; do
     case "$v" in
       '' | Claude | claude | *noreply* | github-actions* | 'GitHub Actions' | runner) ;;
       *) printf '%s\n' "$v" >> "$PRIVATE" ;;
