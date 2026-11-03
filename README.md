@@ -2,7 +2,7 @@
 
 A [Claude Code plugin marketplace](https://code.claude.com/docs/en/plugins) for founders starting a business in Australia. It contains one plugin, `aussie-startup-kit`, which bundles Claude skills for the early setup work. It holds one skill today, and more will be added over time.
 
-> **Not legal advice.** The output is general draft documents for Australian proprietary companies. It is not legal advice, and every draft needs review by a qualified Australian lawyer before you sign it, lodge it or rely on it.
+> **Not legal advice.** The output is general draft documents for Australian proprietary companies. It is not legal advice, and every draft needs review by a qualified Australian lawyer before you sign it, lodge it or rely on it. See the [disclaimer](#disclaimer).
 
 ## Included skills
 
@@ -107,6 +107,10 @@ To also search for words that must never appear, such as your own name or street
 ## Versioning
 
 `plugin.json` sets `version`, and installed copies update only when it changes. Bump it with every release; `scripts/add_skill.sh` bumps the minor version for you.
+
+## Disclaimer
+
+These templates and documents are provided for informational and educational purposes only and do not constitute legal, financial, or corporate compliance advice. Company incorporation in Australia is subject to the Corporations Act 2001 (Cth) and ASIC regulations. Anyone using these materials should seek independent legal and accounting advice before adopting a constitution or lodging documents.
 
 ## License
 
