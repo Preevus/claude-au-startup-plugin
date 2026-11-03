@@ -1,0 +1,42 @@
+# Keep personal information out of this public repository.
+# scripts/check_repo.sh also fails if any of these files would be committed.
+
+# Real config files can hold founder details. Only the placeholder example is kept.
+config.json
+*config*.json
+!example_config.json
+
+# Environment files and the optional private search terms for check_repo.sh
+.env
+*.env
+.env.*
+.check-repo-private-terms
+
+# Generated output: filled-in documents never belong in git
+out/
+*.pdf
+*.html
+*.htm
+
+# Word documents are only kept as placeholder templates inside a skill's assets/ folder
+*.docx
+!plugins/*/skills/*/assets/**/*.docx
+~$*
+
+# Archives: commit the unpacked skill folder, never the .skill or .zip file
+*.skill
+*.zip
+
+# Local Claude Code settings
+.claude/settings.local.json
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Operating system and editor files
+.DS_Store
+Thumbs.db
+*.swp

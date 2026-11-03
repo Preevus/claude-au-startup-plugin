@@ -1,0 +1,21 @@
+{
+  "name": "claude-au-startup-marketplace",
+  "description": "Claude Code plugin marketplace for starting a business in Australia. Plugin: aussie-startup-kit. Included skills: [pty-ltd-incorporation-au] Guides a founder through registering an Australian Pty Ltd to obtain an ACN and ABN: onboarding questions, a document generator (constitution, incorporation pack, post-registration pack) with placeholder-only templates, and Google Drive, Linear and Slack workflows. General drafts only, not legal advice.",
+  "owner": {
+    "name": "The claude-au-startup-plugin contributors"
+  },
+  "plugins": [
+    {
+      "name": "aussie-startup-kit",
+      "source": "./plugins/aussie-startup-kit",
+      "description": "Claude skills for starting a business in Australia. Included skills: [pty-ltd-incorporation-au] Guides a founder through registering an Australian Pty Ltd to obtain an ACN and ABN: onboarding questions, a document generator (constitution, incorporation pack, post-registration pack) with placeholder-only templates, and Google Drive, Linear and Slack workflows. General drafts only, not legal advice.",
+      "category": "business",
+      "tags": [
+        "australia",
+        "startup",
+        "pty-ltd",
+        "company-registration"
+      ]
+    }
+  ]
+}

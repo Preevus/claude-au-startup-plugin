@@ -1,0 +1,34 @@
+{
+  "company_name": "COMPANY NAME",
+  "state": "STATE OR TERRITORY",
+  "registered_office": "REGISTERED OFFICE ADDRESS",
+  "office_occupier": "OCCUPIER NAME",
+  "company_occupies": "[Yes / No]",
+  "principal_place": "Same as registered office",
+  "lodgement_contact": "CONTACT NAME",
+  "lodgement_phone": "PHONE",
+  "lodgement_email": "EMAIL",
+  "lodgement_postal": "POSTAL ADDRESS",
+  "applicant": "APPLICANT NAME",
+  "directors": [
+    {"given": "[GIVEN NAMES 1]", "family": "[FAMILY NAME 1]", "dob": "[DD/MM/YYYY]", "pob": "[TOWN/CITY, STATE/COUNTRY]",
+     "address": "[RESIDENTIAL ADDRESS 1]", "director_id": "[DIRECTOR ID 1]"},
+    {"given": "[GIVEN NAMES 2]", "family": "[FAMILY NAME 2]", "dob": "[DD/MM/YYYY]", "pob": "[TOWN/CITY, STATE/COUNTRY]",
+     "address": "[RESIDENTIAL ADDRESS 2]", "director_id": "[DIRECTOR ID 2]"}
+  ],
+  "shareholders": [
+    {"name": "[SHAREHOLDER 1 NAME]", "type": "individual", "address": "[ADDRESS]", "shares": "[NUMBER]"},
+    {"name": "[SHAREHOLDER 2 NAME]", "type": "company", "acn": "[ACN]", "address": "[REGISTERED OFFICE]", "shares": "[NUMBER]",
+     "signatory": "[SIGNATORY NAME]", "signatory_role": "director"}
+  ],
+  "share_class_code": "ORD",
+  "share_class_title": "Ordinary",
+  "total_shares": "[TOTAL SHARES]",
+  "price_per_share": "$[ISSUE PRICE]",
+  "vote_threshold_pct": "51",
+  "max_directors": "[MAX DIRECTORS]",
+  "anti_dilution": true,
+  "shotgun": true,
+  "option": {"holder": "[OPTION HOLDER]", "shares": "[OPTION SHARES]", "expiry": "[EXPIRY DATE]"},
+  "open_items": ["Replace every [square bracket] item", "Each director to obtain a Director ID", "Lawyer review of all documents"]
+}
