@@ -742,11 +742,14 @@ done < "$FILES"
 # Git history: author and committer emails, names and commit messages
 GITLOG="$TMP/git_history.txt"
 if [ "$IN_GIT" -eq 1 ] && git rev-parse --verify -q HEAD >/dev/null 2>&1; then
-  git log --format='%ae%n%ce' | sort -u > "$TMP/git_emails"
-  while IFS= read -r e; do
-    case "$e" in
-      *@users.noreply.github.com | noreply@anthropic.com | noreply@github.com) ;;
-      *) finding git-metadata "commit history" "author or committer email $(reveal "$e") is not a noreply address" ;;
+  # Authors must use a GitHub noreply address (ID+username@users.noreply.github.com).
+  # Committers may also be GitHub itself (noreply@github.com), which commits web
+  # edits and the pull request merge commits that the workflow checks out.
+  git log --format='author %ae%ncommitter %ce' | sort -u > "$TMP/git_emails"
+  while IFS=' ' read -r role e; do
+    case "$role:$e" in
+      *:*@users.noreply.github.com | committer:noreply@github.com) ;;
+      *) finding git-metadata "commit history" "$role email $(reveal "$e") is not a GitHub noreply address (ID+username@users.noreply.github.com)" ;;
     esac
   done < "$TMP/git_emails"
   git log --format='%an%n%cn%n%B' > "$GITLOG"
